@@ -11,7 +11,7 @@ FROM nginx:${LATEST_VERSION}
 ARG LATEST_VERSION
 
 #Runs command during image built
-RUN echo 'Version is' ${LATEST_VERSION}
+RUN echo 'LATEST_VERSION is' ${LATEST_VERSION}
 RUN mkdir -p /opt/cisco
 
 #Runs command during container creation
@@ -26,4 +26,4 @@ COPY ./Dockerfile /
 VOLUME mysql-db:/data
 
 ENV name eshita
-ENTRYPOINT echo $name
+#ENTRYPOINT echo $name

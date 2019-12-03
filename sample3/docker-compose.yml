@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  web:
+    image: drupal
+  db: 
+    image: postgres
+    depends_on: 
+      - web  

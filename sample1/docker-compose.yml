@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  app1:
+    image: sample1:latest
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+      args: 
+        LATEST_VERSION: latest
+    depends_on:
+      - db
+      - redis  
+    command: echo "HI"
+    container_name: sample1
+  redis:
+    image: redis
+  db:
+    image: postgres    
